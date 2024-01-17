@@ -225,3 +225,13 @@ The client then sends the request directly to the chosen instance.
 
 # Conclusion : Service Discovery with Netflix Eureka
 Service Discovery with Netflix Eureka allows clients to dynamically discover and locate services in a microservices architecture.
+
+## PART 4: Implement API Gateway using Spring Cloud Gateway
+
+![API GETWAY](addons/github_assets/ApiGetway.PNG)
+
+### First Question
+
+# Spring Cloud Gateway ?
+
+an API Gateway on top of Spring WebFlux or Spring WebMVC. Spring Cloud Gateway aims to provide a simple, yet effective way to route to APIs and provide cross cutting concerns to them such as: security, monitoring/metrics, and resiliency.
