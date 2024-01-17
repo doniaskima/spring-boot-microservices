@@ -46,6 +46,8 @@ This mini-project is a hands-on guide to setting up and developing a Spring Boot
 
 # PART1: Building Services
 
+![Architecture](addons/github_assets/architecture.PNG)
+
 In this section, we'll explore the fundamental concepts and annotations used for building services with Spring Boot. We'll discuss key annotations, project setup using Maven, and an overview of building Spring Boot applications.
 
 ## What I've Learned
@@ -97,3 +99,17 @@ In this section, we'll explore the fundamental concepts and annotations used for
 20. @Transactional: Specifies transactional behavior for methods in a service or repository.
 21. @Valid: Indicates that a parameter should be validated using Bean Validation (JSR-303).
 22. @Bean: Marks a method as a Spring bean factory, allowing custom bean creation and configuration within a Spring application context.
+
+# Project Structure and Configuration
+
+## `pom.xml` - The Heart of Your Project
+
+The `pom.xml` file, also known as the Project Object Model, is a critical component of Maven-based Java projects. It serves several essential roles in managing your project:
+
+1. **Project Configuration**: The `pom.xml` file defines key project information, such as its name, version, and description. It ensures clarity and uniqueness in project identification.
+
+2. **Project Dependencies**: You can list external libraries and components that your project relies on within the `pom.xml`. Maven then automatically manages and downloads these dependencies, simplifying project setup and ensuring consistency across development environments.
+
+3. **Build Lifecycle Configuration**: The `pom.xml` specifies how your project is built and packaged. It outlines build phases (e.g., compilation, testing, packaging) and utilizes plugins with their configurations to execute these tasks. This automation streamlines the development process.
+
+In summary, the `pom.xml` file is fundamental to your Maven-based project. It streamlines project configuration, simplifies dependency management, and automates the build process, making it a crucial tool for Java developers.
