@@ -166,3 +166,62 @@ By the end of this section, I've gained a comprehensive understanding of various
     ```
 
 This setup demonstrates effective use of `RestTemplate` and `WebClient` for inter-service communication in a microservices architecture.
+
+## PART 3: Service Discovery using Netflix Eureka
+
+### Problem Statement
+
+In a microservices architecture, inter-process communication (IPC) is crucial for various services to communicate with each other. However, in a cloud environment, everything is dynamic, and services cannot rely on dedicated IP addresses. Microservices can run on different ports, and their locations may change due to scaling, load balancing, or failures. This dynamic nature of microservices deployment makes it challenging to establish direct communication between services. For example, an API Gateway cannot make assumptions about the IP address or port of an inventory service, as there can be multiple instances of the service running simultaneously.
+
+### Service Discovery Pattern
+
+To address these challenges, the Service Discovery pattern comes into play. Service Discovery is a pattern used in microservices architecture to dynamically locate and call the available instances of a service, regardless of their IP addresses and port numbers. It allows services to find and communicate with each other seamlessly, even in a dynamic and constantly changing environment.
+
+### Netflix Eureka
+
+Netflix Eureka is a popular and widely used service discovery tool that helps microservices register themselves and discover other services within a cloud-based or containerized environment. It acts as a service registry that maintains a dynamic list of available services and their instances. When a service wants to communicate with another service, it queries Eureka to find the location (IP address and port) of the desired service instance.
+
+#### How Eureka Works
+
+1. **Service Registration**: Microservices register themselves with Eureka when they start up. They provide metadata such as service name, version, and instance location.
+
+2. **Heartbeats**: Registered services send regular heartbeats to Eureka to indicate that they are alive and operational. Eureka monitors these heartbeats to track the health of services.
+
+3. **Service Discovery**: When a service needs to communicate with another service, it queries Eureka for the available instances of that service. Eureka returns a list of instances, and the calling service can choose one to communicate with.
+
+4. **Load Balancing**: Eureka can be integrated with load balancers to distribute incoming requests evenly across multiple service instances.
+
+### Benefits of Netflix Eureka
+
+- **Dynamic Service Discovery**: Eureka allows services to discover each other dynamically, regardless of their changing IP addresses and ports.
+
+- **Load Balancing**: Eureka can be used in conjunction with load balancers to distribute traffic evenly among service instances, improving performance and scalability.
+
+- **High Availability**: Eureka itself can be designed for high availability, ensuring that service discovery remains robust even in the presence of failures.
+
+- **Efficient Routing**: Services can efficiently route requests to the closest or healthiest instances, optimizing response times.
+
+By adopting the Service Discovery pattern using Netflix Eureka, microservices can operate more effectively in dynamic, cloud-based environments, ensuring seamless communication and scalability.
+
+![Eureka](addons/github_assets/eureka.PNG)
+
+In the "Instances currently registered with Eureka" section, three microservices are listed: "INVENTORY-SERVICE", "ORDER-SERVICE", and "PRODUCT-SERVICE". Each service has a status of "UP", indicating they are currently running and properly registered with Eureka. The services are running on different ports as indicated by the URLs shown (e.g., "localhost:inventory-service:0", "localhost:order-service:8081", and "localhost:product-service").
+
+This screen is typically used by developers and system administrators to monitor the status of microservices and their instances in a distributed system.
+
+
+# Client-Side Load Balancing
+
+Client-side load balancing is a technique where the client, rather than a centralized load balancer, is responsible for distributing the load across multiple server instances. In the context of microservices and service discovery (like with Spring Eureka), client-side load balancing can work as follows:
+
+## Service Discovery
+The client first queries a service registry, such as Eureka, to get a list of available service instances. The registry contains the network locations of the instances of various services that are running in the microservices environment.
+
+## Load Balancing Decision
+Instead of having a server-side load balancer distribute requests, the client uses a load-balancing algorithm to select which service instance to send a request to. This decision is made at runtime, for each request.
+
+## Request Routing
+The client then sends the request directly to the chosen instance.
+
+# Conclusion : Service Discovery with Netflix Eureka
+Service Discovery with Netflix Eureka allows clients to dynamically discover and locate services in a microservices architecture.

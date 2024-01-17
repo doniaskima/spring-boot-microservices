@@ -1,6 +1,5 @@
 package com.programmingtechie.orderservice.dto;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,4 +13,3 @@ public class InventoryResponse {
     private String skuCode;
     private boolean isInStock;
 }
- 

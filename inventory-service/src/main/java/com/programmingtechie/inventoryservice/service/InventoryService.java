@@ -5,6 +5,7 @@ import com.programmingtechie.inventoryservice.repository.InventoryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 import java.util.List;
 
 @Service
@@ -24,7 +25,3 @@ public class InventoryService {
                 ).toList();
     }
 }
-
-// Using `.builder()` in Java is a pattern for constructing complex objects with optional parameters, 
-// providing a readable and fluent way to set object properties, resulting in more maintainable
-// code. It's commonly used to create immutable objects with specific configurations.
