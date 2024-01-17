@@ -134,3 +134,35 @@ Additionally, I've delved deeper into two essential tools for HTTP-based communi
 
 By the end of this section, I've gained a comprehensive understanding of various IPC mechanisms, including how to effectively use `RestTemplate` and `WebClient` for inter-service communication in a microservices ecosystem.
 
+### Inter-Service Communication between OrderService and InventoryService
+
+- **WebClient Configuration**: `WebClientConfig` class provides a load-balanced `WebClient.Builder` bean for making HTTP requests.
+
+    ```java
+    @Configuration
+    public class WebClientConfig {
+        @Bean
+        @LoadBalanced
+        public WebClient.Builder webClientBuilder() {
+            return WebClient.builder();
+        }
+    }
+    ```
+
+- **OrderService Implementation**: Handles order requests by communicating with the `InventoryService` to check product availability. It maps order line items, collects SKU codes, and queries the `InventoryService`. If all products are in stock, the order is processed; otherwise, an exception is thrown.
+
+    ```java
+    public class OrderService {
+        // ... (dependencies and constructor)
+
+        public void placeOrder(OrderRequest orderRequest) {
+            // Logic to process the order
+            // Communicates with InventoryService using WebClient
+            // Saves order if products are in stock
+        }
+
+        // Additional private methods
+    }
+    ```
+
+This setup demonstrates effective use of `RestTemplate` and `WebClient` for inter-service communication in a microservices architecture.
