@@ -333,3 +333,32 @@ Distributed Tracing traces every single request from its origin through all the 
 - **Service Dependencies Information**: Understand how different services are interconnected and dependent on each other.
 - **Metrics and Observability**: Collect valuable data to monitor the health and performance of your microservices.
 - **Resiliency in Failure Scenarios**: Improve the system's ability to remain robust in the face of failures by quickly identifying and addressing issues.
+
+
+## So What is Zipkin ??  
+
+Zipkin is a distributed tracing system that helps gather timing data needed to troubleshoot latency problems in microservices architectures. With Spring Boot, integrating Zipkin is straightforward, enabling you to trace requests across distributed systems. It visualizes the flow of requests through various microservices and provides insights into latency issues. By incorporating Zipkin, Spring Boot applications gain enhanced observability, making it easier to understand and optimize their behavior in a distributed setting.
+
+    ```java
+        docker run -d -p 9411:9411 openzipkin/zipkin
+    ```
+
+ 
+After Adding Zipkin
+
+![Distributed Tracing Diagram](addons/github_assets/zipkin.png)
+
+There is additional Information Like This : 
+
+![Distributed Tracing Diagram](addons/github_assets/proporties.png)
+
+![Distributed Tracing Diagram](addons/github_assets/pool.PNG)
+
+
+In This Exception : 
+ 
+![Distributed Tracing Diagram](addons/github_assets/Exeption.PNG)
+
+![Distributed Tracing Diagram](addons/github_assets/Exeption1.PNG)
+
+![Distributed Tracing Diagram](addons/github_assets/zipkinn.PNG)
