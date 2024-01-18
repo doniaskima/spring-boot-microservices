@@ -260,7 +260,9 @@ Keycloak is an open-source solution for Identity and Access Management, designed
 
 Keycloak is ideal for securing microservices, offering extensive features and seamless integration with Spring Security and Spring Cloud Gateway.
 
-## PART 5: Implement Circuit Breaker in Spring Boot
+## PART 6: Implement Circuit Breaker in Spring Boot
+
+![Circuit Breaker](addons/github_assets/circuit-breaker.PNG)
 
 ### Introduction to Circuit Breaker in Spring Boot
 In a microservices architecture, services often depend on each other. Implementing a Circuit Breaker pattern in Spring Boot addresses issues related to service dependencies, improving system resilience and stability.
