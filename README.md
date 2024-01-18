@@ -235,3 +235,27 @@ Service Discovery with Netflix Eureka allows clients to dynamically discover and
 # Spring Cloud Gateway ?
 
 an API Gateway on top of Spring WebFlux or Spring WebMVC. Spring Cloud Gateway aims to provide a simple, yet effective way to route to APIs and provide cross cutting concerns to them such as: security, monitoring/metrics, and resiliency.
+
+
+# Part 5: Secure Microservices using Keycloak
+
+## Introduction to Keycloak
+Keycloak is an open-source solution for Identity and Access Management, designed for modern applications. It simplifies securing applications and services with minimal coding.
+
+## Why Use Keycloak?
+- **Centralized User Management**: Manage user identities and control access from a single point.
+- **Standards-Based**: Supports OpenID Connect, OAuth 2.0, SAML 2.0 for wide compatibility.
+- **Single Sign-On (SSO)**: Enables users to log in once for multiple applications.
+- **Social Login**: Supports login via platforms like Google, Facebook, LinkedIn.
+- **Fine-Grained Authorization**: Define detailed access policies and permissions.
+- **Customizable**: Offers customizable interfaces for user interactions.
+- **Robust Security Features**: Includes password policies, brute-force detection, and 2-factor authentication.
+- **Ease of Deployment**: Easily deployable in various environments, compatible with Docker and Kubernetes.
+
+## Key Features
+- **User Federation**: Integrates with external directories like LDAP and Active Directory.
+- **Identity Brokering**: Connects with other identity providers.
+- **Client Adapters**: Simplifies integration with various application types.
+- **Admin Console**: A web-based interface for managing users and permissions.
+
+Keycloak is ideal for securing microservices, offering extensive features and seamless integration with Spring Security and Spring Cloud Gateway.
