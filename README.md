@@ -312,3 +312,24 @@ The circuit breaker pattern is a crucial part of building resilient applications
 This pattern helps prevent a failing service from causing a cascading failure in other parts of the application.
 
 ![Circuit Breaker](addons/github_assets/spring-cloud-circuit-breaker-resilience4j.png)
+
+
+## PART 7: Implement Distributed Tracing
+
+![Distributed Tracing Diagram](addons/github_assets/distributed-tracing.PNG)
+
+### What is Distributed Tracing?
+
+In a Microservices architecture, a request can travel across multiple microservices to build the response and send it to the user. Pinpointing issues in such an environment can be challenging. Distributed Tracing is designed to tackle this problem.
+
+Distributed Tracing traces every single request from its origin through all the services it interacts with. It involves analyzing data associated with each request, including a Trace ID, timestamp, and other useful metadata. This approach allows us to track how long a request takes in each microservice and gather metrics to improve latency and overall system performance.
+
+![Distributed Tracing Diagram](https://dytvr9ot2sszz.cloudfront.net/wp-content/uploads/2020/10/Traces-and-Spans-diagram-from-jaegertracing.io_.png)
+*Image Credit: Jaeger Tracing*
+
+### Benefits of Distributed Tracing
+
+- **End-to-End Visibility**: Gain a complete view of user requests as they travel through the entire system of microservices.
+- **Service Dependencies Information**: Understand how different services are interconnected and dependent on each other.
+- **Metrics and Observability**: Collect valuable data to monitor the health and performance of your microservices.
+- **Resiliency in Failure Scenarios**: Improve the system's ability to remain robust in the face of failures by quickly identifying and addressing issues.
