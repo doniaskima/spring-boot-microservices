@@ -281,3 +281,34 @@ In a microservices architecture, services often depend on each other. Implementi
 - **Annotation-Driven Configuration**: Easy configuration using annotations like `@CircuitBreaker`.
 
 Implementing a Circuit Breaker ensures our microservices handle failures gracefully, providing reliability and enhanced user experience.
+
+## Resilience4j Overview ? 
+
+Resilience4j is a lightweight fault tolerance library inspired by Netflix's Hystrix, but designed for Java 8 and functional programming. It offers several core modules, such as Retry, Circuit Breaker, Rate Limiter, Time Limiter, and Bulkhead, each of which can be used in isolation or together. Resilience4j allows developers to build highly resilient and robust applications that can gracefully handle external system failures. Its lightweight nature and modular design make it a great choice for microservice architectures where network-based service-to-service communication is common.
+
+Key Features:
+- **Circuit Breaker**: Helps in preventing a cascade of failures when a remote service is down.
+- **Rate Limiter**: Limits the number of times a service can be called within a certain period.
+- **Retry**: Provides the ability to automatically retry a failed call.
+- **Bulkhead**: Limits the number of concurrent calls to a component.
+- **Time Limiter**: Sets time limits for a call to complete.
+
+Resilience4j is a versatile library and integrates well with Spring Boot, making it a popular choice for building resilient Java applications.
+
+## Circuit Breaker Functionality
+
+The circuit breaker pattern is a crucial part of building resilient applications, especially in microservices architectures. Here's how a circuit breaker functions:
+
+- **Detection of Errors**: If a circuit breaker detects a high number of errors, it will "open" its circuit, preventing new calls to the failing service.
+
+- **Open Circuit State**: When the circuit is "open," it doesn't wait for new errors to occur on subsequent calls. Instead, it immediately redirects the call to a predefined fallback method.
+
+- **Fallback Method**: The fallback method can return a response from a "cache" or simply return a pre-defined error message, mitigating the impact of the failing service.
+
+- **Half-Open State**: After a configurable period, the circuit breaker enters a "half-open" state. In this state, a limited number of test calls are allowed to pass through to determine if the underlying issue has been resolved.
+
+- **Evaluation of Service Health**: If these test calls fail, the circuit breaker reverts to the "open" state, continuing to redirect calls to the fallback method. If the calls succeed, it indicates that the issue has been resolved, and the circuit breaker transitions to the "closed" state, resuming normal operations.
+
+This pattern helps prevent a failing service from causing a cascading failure in other parts of the application.
+
+![Circuit Breaker](addons/github_assets/spring-cloud-circuit-breaker-resilience4j.png)
